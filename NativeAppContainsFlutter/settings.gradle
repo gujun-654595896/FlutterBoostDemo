@@ -1,0 +1,10 @@
+include ':app'
+rootProject.name = "NativeAppContainsFlutter"
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        '../flutter_module_for_native_app/.android/include_flutter.groovy'
+))
+
+include ':flutter_module_for_native_app'
+project(':flutter_module_for_native_app').projectDir = new File('../flutter_module_for_native_app')
